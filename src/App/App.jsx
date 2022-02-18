@@ -5,9 +5,9 @@ import WishInput from './WishInput';    // Añadir tareas
 import WishList from './WishList';  // Lista de Tareas
 
 const initialWishes = [
-    { text: 'Subir en globo', done: false },
-    { text: 'Comer', done: true },
-    { text: 'Ver Peli', done: false }
+    { text: 'Terminar TFG', done: false },
+    { text: 'Hacer Wishlist', done: true },
+    { text: 'Ver serie', done: false }
 ]
 
 const App = () => {
