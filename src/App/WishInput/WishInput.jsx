@@ -17,7 +17,7 @@ const WishInput = ({onNewWish}) => {
             />
     </fieldset>
     );
-};
+};    
 
 WishInput.propType = {
     onNewWish: PropTypes.func, /* Es de tipo función */
