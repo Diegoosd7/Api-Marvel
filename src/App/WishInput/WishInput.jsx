@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, {useState} from "react";
 
 const WishInput = ({onNewWish}) => {
-    const [newWishText, setNewWishText]= useState(''); /* Usamos un hook para el estado */
+    const [newWishText, setNewWishText]= useState(''); /* Usamos un hook para el estado. Por defecto, el input estará vacío */
     return(
     <fieldset className='wish-input'>
         <legend className='wish-input__label'>New Wish</legend>

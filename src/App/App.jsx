@@ -16,7 +16,8 @@ const App = () => {
         <div className='app'>
             <h1>My Wishlist</h1>
             <WishInput onNewWish={wish => setWishes([wish, ... wishes])} /> {/*Capturamos el evento de onNewWish que le pasamos a wishinput.*/}
-            {/* Con los 3 puntos, creamos un nuevo array con todos lo elementos que había + el nuevo wish */}
+            {/* Setwishes -> Estiy creando un array con el deseo nuevo que le paso en la función y los otros que ya había
+            Con los 3 puntos, creamos un nuevo array con todos lo elementos que había + el nuevo wish */}
             <WishList wishes={wishes} onWishesChange={setWishes} /> 
             {/*Le paso los whishes.
                 Con el onwisheschange lo que hago es actualizar la lista con los nuevos estados de los wishes
