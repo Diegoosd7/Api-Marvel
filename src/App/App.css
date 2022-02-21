@@ -52,6 +52,14 @@ body,html{
     text-decoration: line-through;
 }
 
+.wish-list__item--warn{
+    color: #0e5ef1;
+}
+
+.wish-list__item--danger{
+    color:crimson
+}
+
 .wish-clear{
     width: 100%;
     padding: 0.5rem ;
