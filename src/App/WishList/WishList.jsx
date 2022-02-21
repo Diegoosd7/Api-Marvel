@@ -12,9 +12,9 @@ const WishList = ({ wishes, onWishesChange }) /*Recibo los wishes. Onwisheschang
             //         {text}
             //     </label>
             // </li>
-            <WishItem text={text} done={done} id={`wish${i}`} key={text} onDoneChange={value => {
+            <WishItem text={text} done={done} id={`wish${i}`} key={text} onDoneChange={value => { //Le pasamos el OnDoneChange de WishItem
                 const updatedWishes = [...wishes];
-                updatedWishes[i].done = value;
+                updatedWishes[i].done = value; //El value que recibo es un true o false del checked
                 onWishesChange(updatedWishes);
             }} />
         ))}

@@ -23,7 +23,8 @@ const App = () => {
                 Con el onwisheschange lo que hago es actualizar la lista con los nuevos estados de los wishes
             */}
             <button className='wish-clear' type="button" onClick={()=>setWishes(wishes.filter(wish => !wish.done))}>Archive done wishes</button>
-            {/*Lo que hace el evento onClick es: devuelve un array de wishes filtrado por los que no están hechos*/}
+            {/*Lo que hace el evento onClick es: devuelve un array de wishes filtrado por los que no están hechos
+            Siempre hay que crear una función en el evento, aunque no tenga parámtro, necesita una función*/}
         </div>
     )
 }
