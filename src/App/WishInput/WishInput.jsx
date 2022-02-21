@@ -10,7 +10,7 @@ const WishInput = ({onNewWish}) => {
         value={newWishText}/*Valor del input*/ onChange={e=> setNewWishText(e.target.value)/*Evento para cuando cambie el input*/}
         onKeyUp = { e=>{ /* Evento para ver si damos enter y si es así, creamos el wish*/
             if (e.key == 'Enter' && newWishText.length){
-                onNewWish({ done: false, text: newWishText}); /* Llamamos a la función callback */
+                onNewWish({ done: false, text: newWishText, id: Date.now()}); /* Llamamos a la función callback */
                 setNewWishText(''); //Limpiamos el contenido del input
             }
         }}
