@@ -20,7 +20,7 @@ function WishItem({ done, text, id, onDoneChange }) {
     }, [done]);//El efecto va a variar en función de si el wish está hecho o no. NO POR LA EDAD ¡CUIDADO!
     return (
         <li
-            className={classNames('wish-list__item', {//Las clases de abajo dependen de una condición
+            className={classNames('wish-list__item', {//Es un objeto formado por clases y una condición.
                 'wish-list__item--done': done,
                 'wish-list__item--warn': age >= 5 && age < 10,
                 'wish-list__item--danger': age >= 10,

@@ -41,6 +41,9 @@ body,html{
     display: flex;
     font-size: 1.2rem;
     align-items:center;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 8px;
 }
 
 .wish-list__item input{
@@ -52,18 +55,25 @@ body,html{
     text-decoration: line-through;
 }
 
+.wish-list__item--done{
+    background-color: rgba(14, 241, 44, 0.5);
+    transition: 2s;
+}
+
 .wish-list__item--warn{
-    color: #0e5ef1;
+    background-color: rgba(14, 93, 241, 0.5);
+    transition: 1s;
 }
 
 .wish-list__item--danger{
-    color:crimson
+    background-color:rgba(220, 20, 60, 0.5);
+    transition: 1s;
 }
 
 .wish-clear{
     width: 100%;
     padding: 0.5rem ;
-    background: rgb(173, 209, 243);
+    background: #add1f3;
     font-size: 1.2rem;
     border:1px solid grey;
     border: 3px;
