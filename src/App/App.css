@@ -1,80 +1,42 @@
-*{
-    box-sizing: border-box;
-    font-family: sans-serif;
+/* CSS PARA LA APP*/
+
+body {
+  background-image: url('./img/wallpaper.jpg');
 }
 
-body,html{
-    padding: 0;
-    margin:0;
+.logo {
+  width: 70%;
 }
 
-.app{
-    width: 400px;
-    margin: auto;
-    max-width: 100%;
-    border: 1px solid;
-    padding: 0 2rem 2rem 2rem;
-    margin-top: 2rem;
-    background-color: rgb(247, 248, 186);
+nav a { /* ESTILOS PARA EL MENÚ */
+  color: aliceblue;
+  margin-left: 10%;
+  font-size: xx-large;
+  text-decoration: none;
 }
 
-.wish-input{
-    border: 0;
-    border-bottom: 3px dashed grey;
-    padding: 0;
+a:hover, a:active{
+  color: red;
 }
 
-.wish-input__field{
-    width: 100%;
-    border: 0;
-    padding: 1rem;
-    font-size: 1.2rem;
-    background-color: transparent;
+.titulo{ /* CLASE PARA LOS TITULOS DE CADA SECCIÓN DEL MENÚ */
+  color: white;
+  text-align: center;
+  font-size: xx-large;
 }
 
-.wish-list{
-    list-style: none;
-    padding: 0;
+header {
+  display: grid;
+  grid-template-columns: 20% 60%;
+  align-items: center;
 }
 
-.wish-list__item{
-    display: flex;
-    font-size: 1.2rem;
-    align-items:center;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 8px;
+.heroes {
+  width: 95%;
+  display: block;
+  margin: auto;
 }
 
-.wish-list__item input{
-    width: 2rem;
-    height: 2rem;
-}
-
-.wish-list__item--done label{
-    text-decoration: line-through;
-}
-
-.wish-list__item--done{
-    background-color: rgba(14, 241, 44, 0.5);
-    transition: 2s;
-}
-
-.wish-list__item--warn{
-    background-color: rgba(14, 93, 241, 0.5);
-    transition: 1s;
-}
-
-.wish-list__item--danger{
-    background-color:rgba(220, 20, 60, 0.5);
-    transition: 1s;
-}
-
-.wish-clear{
-    width: 100%;
-    padding: 0.5rem ;
-    background: #add1f3;
-    font-size: 1.2rem;
-    border:1px solid grey;
-    border: 3px;
+.separacion{
+  padding: 2%;
 }
