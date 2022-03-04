@@ -1,8 +1,12 @@
 import React from 'react';
+import SearchBox from '../App/components/SearchBox/SearchBox';
+
+
 export default function Comics() {
   return (
     <main style={{ padding: '1rem 0' }}>
       <h2 className="titulo">COMICS</h2>
+      <SearchBox/>
     </main>  
   );
 }
