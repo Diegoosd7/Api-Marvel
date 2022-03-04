@@ -8,7 +8,7 @@ import {
 import App from './App';
 import Comics from './routes/Comics';
 import Personajes from './routes/Personajes';
-import Home from './App/components/Home/Home'
+import Home from './App/components/Home/Home';
 
 const rootElement = document.getElementById('root');
 render(
@@ -16,7 +16,7 @@ render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        <Route path="home" element={<Home/>} />
+        <Route path="home" element={<Home />} />
         <Route path="comics" element={<Comics />} />
         <Route path="personajes" element={<Personajes />} />
       </Route>
