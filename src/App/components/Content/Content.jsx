@@ -6,6 +6,7 @@ function Content() {
     <div>
       <div className="separacion" />
       <img src={imagen} alt="Heroes Marvel Comic" className="heroes" />
+      <div className="separacion" />
     </div>
   );
 }

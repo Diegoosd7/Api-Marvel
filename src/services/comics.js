@@ -8,12 +8,15 @@
 //  CON UN CONVERTIDOR ONLINE
 // MD5 = 79b39bc45ede5e3689d0b2c12862b630
 
-const hash = '79b39bc45ede5e3689d0b2c12862b630';
-const publicKey='1928dbc9bba11631437d27c1258a8e7a';
-const URLComics = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}`;
+// const hash = '79b39bc45ede5e3689d0b2c12862b630';
+// const publicKey='1928dbc9bba11631437d27c1258a8e7a';
+// const URLComics = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}`;
 
-async function accedeComics() {
-    let response = await fetch(URLComics);
-    let comics = await response.json();
-    return comics;
-}
+// fetch(URLComics)
+// .then(response => response.json())
+// .then (data => {
+//     console.log('Llego aquí')
+//     console.log(data);
+// })
+// .catch(err=>console.log(err))
+
