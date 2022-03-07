@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import SearchBoxPersonajes from '../App/components/SearchBoxPersonajes/SearchBocPersonajes';
+import CharacterList from '../App/components/CharacterList/CharacterList'
 //import { accedePersonajes } from '../services/personajes'
+import './Personajes.css'
 
 export default function Personajes() {
   const [items, setItems] = useState([])
+  const[isLoading,setLoading] = useState(true)
 
   useEffect(() => {
     const apikey = "5b33ad8e93ea0469f88a0958a4eefc64";
@@ -23,6 +26,7 @@ export default function Personajes() {
         console.log(comics.data.results)
         setItems(comics.data.results)
         console.log(items)
+        setLoading(false)
 
       })
       .catch(err => console.log(err));
@@ -33,7 +37,7 @@ export default function Personajes() {
     <main style={{ padding: '1rem 0' }}>
       <h2 className="titulo">PERSONAJES</h2>
       <SearchBoxPersonajes />
-      <div className="row" id="marvel-row" />
+      <CharacterList items={items} isLoading={isLoading} />
     </main>
   );
 }

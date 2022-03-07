@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import SearchBoxComics from '../App/components/SearchBoxComics/SearchBoxComics';
+import ComicList from '../App/components/ComicList/ComicList'
+import './Comics.css';
 
 export default function Comics() {
   const [items, setItems] = useState([])
+  const[isLoading,setLoading] = useState(true)
 
   useEffect(() => {
     const apikey = "5b33ad8e93ea0469f88a0958a4eefc64";
@@ -22,6 +25,7 @@ export default function Comics() {
         console.log(comics.data.results)
         setItems(comics.data.results)
         console.log(items)
+        setLoading(false)
 
       })
       .catch(err => console.log(err));
@@ -32,7 +36,7 @@ export default function Comics() {
     <main style={{ padding: '1rem 0' }}>
       <h2 className="titulo">COMICS</h2>
       <SearchBoxComics />
-      <div className="row" id="marvel-row" />
+      <ComicList items={items} isLoading={isLoading} />
     </main>
   );
 }

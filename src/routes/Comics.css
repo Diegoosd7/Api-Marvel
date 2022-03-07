@@ -1,0 +1,61 @@
+.contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .content {
+    cursor: pointer;
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .content h1 {
+    font-size: 25px;
+    border-bottom: 1px #fff solid;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .content img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .content-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .content:hover .content-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .content-front,
+  .content-back {
+    position: absolute;
+    overflow-y: hidden ;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    
+  }
+  
+  .content-back {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    transform: rotateY(180deg);
+  }
+  
+  .content li {
+    list-style: none;
+    padding-bottom: 10px;
+  }
