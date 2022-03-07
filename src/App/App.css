@@ -39,7 +39,7 @@ header {
 }
 
 .heroes {
-  width: 95%;
+  width: 80%;
   display: block;
   margin: auto;
 }
@@ -52,20 +52,9 @@ footer {
   color: white;
 }
 
-#icono1 {
+#icono, #icono2, #icono3 {
   margin-left: 15px;
   font-size: 25px;
   color: white;
 }
 
-#icono2 {
-  margin-left: 15px;
-  font-size: 25px;
-  color: white;
-}
-
-#icono3 {
-  margin-left: 15px;
-  font-size: 25px;
-  color: white;
-}

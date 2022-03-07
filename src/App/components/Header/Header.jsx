@@ -8,13 +8,13 @@ function Header() {
       <NavLink to="/home"><a href=""><img className="logo" src={logo} alt="Logo Marvel" /></a></NavLink>
       <nav>
         <Link to="/home">INICIO</Link>
-        <i class="glyphicon glyphicon-home" id="icono1"></i>
+        <i className="glyphicon glyphicon-home" id="icono" />
         {' '}
         <Link to="/personajes">PERSONAJES</Link>
-        <i class="glyphicon glyphicon-user" id="icono2"></i>
+        <i className="glyphicon glyphicon-user" id="icono2" />
         {' '}
         <Link to="/comics">COMICS</Link>
-        <i class="glyphicon glyphicon-book" id="icono3"></i>
+        <i className="glyphicon glyphicon-book" id="icono3" />
       </nav>
     </header>
   );

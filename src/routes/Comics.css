@@ -29,11 +29,10 @@
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  color: #f1f1f1;
   width: 100%;
-  padding: 10%;
+  padding: 13%;
   transition: 0.8s ease;
-  opacity: 0;
+  opacity: 0; /*Si lo quitas, el cartel se queda fijo*/
   color: white;
   font-size: 20px;
   text-align: center;

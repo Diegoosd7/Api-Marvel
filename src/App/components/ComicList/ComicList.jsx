@@ -1,15 +1,17 @@
-import React from 'react'
-import ComicItem from '../ComicItem/ComicItem'
+import React from 'react';
+import ComicItem from '../ComicItem/ComicItem';
 
-const ComicList= ({items,isLoading}) => {
-    return isLoading ? <h1 className='titulo'>Loading...</h1> :
-    <section className="contents2">
+function ComicList({ items, isLoading }) {
+  return isLoading ? <h1 className="titulo">Loading...</h1>
+    : (
+      <section className="contents2">
         {
-            items.map(item=>(
-                <ComicItem key={item.id} item={item}></ComicItem>
+            items.map((item) => (
+              <ComicItem key={item.id} item={item} />
             ))
         }
-    </section>
+      </section>
+    );
 }
 
-export default ComicList
+export default ComicList;

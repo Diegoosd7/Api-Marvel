@@ -1,3 +1,3 @@
-import CharacterList from './CharacterList'
+import CharacterList from './CharacterList';
 
 export default CharacterList;
