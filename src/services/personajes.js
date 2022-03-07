@@ -12,8 +12,14 @@ const hash = '79b39bc45ede5e3689d0b2c12862b630';
 const publicKey = '1928dbc9bba11631437d27c1258a8e7a';
 const URLPersonajes = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}`;
 
-async function accedePersonajes() {
-  const response = await fetch(URLPersonajes);
-  const personajes = await response.json();
-  return personajes;
+export function accedePersonajes() {
+  let personajes
+  fetch(URLPersonajes)
+    .then((res) => res.json())
+    .then((pjs) => {
+      //console.log(pjs.data.results);
+      personajes = pjs.data.results;
+    })
+    .catch((err) => console.log(err));
+    return personajes;
 }
