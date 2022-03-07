@@ -1,28 +1,35 @@
 /* CSS PARA LA APP*/
 
+
 body {
   background-image: url('./img/wallpaper.jpg');
 }
+
 
 .logo {
   width: 70%;
 }
 
-nav a { /* ESTILOS PARA EL MENÚ */
+nav a {
+  /* ESTILOS PARA EL MENÚ */
   color: aliceblue;
   margin-left: 10%;
   font-size: xx-large;
   text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-a:hover, a:active{
+a:hover,
+a:active {
   color: red;
 }
 
-.titulo{ /* CLASE PARA LOS TITULOS DE CADA SECCIÓN DEL MENÚ */
+.titulo {
+  /* CLASE PARA LOS TITULOS DE CADA SECCIÓN DEL MENÚ */
   color: white;
   text-align: center;
   font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 header {
@@ -37,10 +44,28 @@ header {
   margin: auto;
 }
 
-.separacion{
+.separacion {
   padding: 2%;
 }
 
-footer{
-  color:white;
+footer {
+  color: white;
+}
+
+#icono1 {
+  margin-left: 15px;
+  font-size: 25px;
+  color: white;
+}
+
+#icono2 {
+  margin-left: 15px;
+  font-size: 25px;
+  color: white;
+}
+
+#icono3 {
+  margin-left: 15px;
+  font-size: 25px;
+  color: white;
 }

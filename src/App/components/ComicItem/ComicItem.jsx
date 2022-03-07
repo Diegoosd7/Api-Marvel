@@ -3,12 +3,12 @@ import React from 'react'
 const ComicItem = ({ item }) => {
 
     return (
-        <div className='content'>
-            <div className='content-inner'>
-                <div className='content-front'>
+        <div className='content2'>
+            <div className='content2-inner'>
+                <div className='content2-front'>
                     <img src={item.thumbnail.path + ".jpg"} alt='' />
                 </div>
-                <div className='content-back'>
+                <div className='content2-back'>
                     <h1>{item.name}</h1>
                     <ul>
                         <li>
