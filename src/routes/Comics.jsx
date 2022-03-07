@@ -29,8 +29,9 @@ export default function Comics() {
 
   return (
     <main style={{ padding: '1rem 0' }}>
-      <h2 className="titulo">COMICS</h2>
+      <h2 className="titulo">COMICS</h2><br/>
       <SearchBoxComics />
+      <div  className='separacion'></div>
       <ComicList items={items} isLoading={isLoading} />
     </main>
   );

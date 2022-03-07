@@ -36,7 +36,9 @@ export default function Personajes() {
   return (
     <main style={{ padding: '1rem 0' }}>
       <h2 className="titulo">PERSONAJES</h2>
+      <br/>
       <SearchBoxPersonajes />
+      <div className='separacion'></div>
       <CharacterList items={items} isLoading={isLoading} />
     </main>
   );
