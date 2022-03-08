@@ -5,6 +5,20 @@ body {
   background-image: url('./img/wallpaper.jpg');
 }
 
+.error {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.error__p{
+  font-family: 'Times New Roman', Times, serif;
+  color:white;
+  font-size: 180%;
+  text-align: center;
+}
 
 .logo {
   width: 70%;
@@ -52,9 +66,10 @@ footer {
   color: white;
 }
 
-#icono, #icono2, #icono3 {
+#icono,
+#icono2,
+#icono3 {
   margin-left: 15px;
   font-size: 25px;
   color: white;
 }
-
