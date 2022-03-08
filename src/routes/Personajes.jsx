@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import SearchBoxPersonajes from '../App/components/SearchBoxPersonajes/SearchBocPersonajes';
 import CharacterList from '../App/components/CharacterList/CharacterList';
 import { accedePersonajes } from '../services/personajes'
 import './Personajes.css';
@@ -37,10 +36,6 @@ export default function Personajes() {
 
   return (
     <main style={{ padding: '1rem 0' }}>
-      <h2 className="titulo">PERSONAJES</h2>
-      <br />
-      <SearchBoxPersonajes />
-      <div className="separacion" />
       <CharacterList items={items} isLoading={isLoading} />
     </main>
   );
