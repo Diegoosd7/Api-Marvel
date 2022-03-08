@@ -15,7 +15,7 @@ function CharacterList({ items, isLoading }) {
       <div>
         <h2 className="titulo">PERSONAJES</h2>
         <br />
-        <SearchBoxPersonajes />
+        {/* <SearchBoxPersonajes /> */}
         <div className="separacion" />
         <section className="contents">
           {
