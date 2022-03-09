@@ -3,7 +3,7 @@ import CharacterItem from '../CharacterItem/CharacterItem';
 import escudo from '../../img/loading2.gif'
 import SearchBoxPersonajes from '../SearchBoxPersonajes/SearchBoxPersonajes';
 
-function CharacterList({ items, isLoading }) {
+function CharacterList({ items, isLoading, search }) {
   return isLoading
     ?
     <center>
@@ -15,7 +15,7 @@ function CharacterList({ items, isLoading }) {
       <div>
         <h2 className="titulo">PERSONAJES</h2>
         <br />
-        {/* <SearchBoxPersonajes /> */}
+        <SearchBoxPersonajes search={search}/>
         <div className="separacion" />
         <section className="contents">
           {
@@ -25,7 +25,6 @@ function CharacterList({ items, isLoading }) {
           }
         </section>
       </div>
-
     );
 }
 

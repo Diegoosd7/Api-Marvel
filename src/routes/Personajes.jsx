@@ -14,13 +14,15 @@ export default function Personajes() {
 
   useEffect(() => {
     if (buscar === '') {
+      //const urlAPI = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}&limit=100&offset=100`;
+      //const urlAPI = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}&limit=100`;
       const urlAPI = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}`;
 
       fetch(urlAPI)
         .then((res) => res.json())
         .then((personajes) => {
           // console.log("Llego aqui");
-          // console.log(comics)
+          console.log(personajes)
           console.log(personajes.data.results);
           setItems(personajes.data.results);
           //console.log(items);
@@ -38,12 +40,12 @@ export default function Personajes() {
     } else {
       const busqueda = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${buscar}&ts=1&apikey=${publicKey}&hash=${hash}`;
       fetch(busqueda)
-      .then((respuesta) => respuesta.json())
-      .then((personajeBuscado)=>{
-        console.log(personajeBuscado.data.results);
-        setItems(personajeBuscado.data.results);
-        setLoading(false);
-      })
+        .then((respuesta) => respuesta.json())
+        .then((personajeBuscado) => {
+          console.log(personajeBuscado.data.results);
+          setItems(personajeBuscado.data.results);
+          setLoading(false);
+        })
 
     }
 
@@ -51,8 +53,8 @@ export default function Personajes() {
 
   return (
     <main style={{ padding: '1rem 0' }}>
-      <SearchBoxPersonajes search={(q)=>setBuscar(q)}/>
-      <CharacterList items={items} isLoading={isLoading} />
+      {/* <SearchBoxPersonajes search={(q) => setBuscar(q)} /> */}
+      <CharacterList items={items} isLoading={isLoading} search={(q) => setBuscar(q)} />
     </main>
   );
 }
