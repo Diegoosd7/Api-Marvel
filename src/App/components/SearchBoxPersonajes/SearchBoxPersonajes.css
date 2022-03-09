@@ -1,0 +1,11 @@
+#search {
+  width: 40%;
+  padding: 8px;
+  -webkit-appearance: none; /*Para borrar texto del search*/
+}
+
+/*BORRAR TEXTO DEL SEARCH*/
+#search::-webkit-search-cancel-button {
+  -webkit-appearance: searchfield-cancel-button;
+}
+
