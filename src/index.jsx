@@ -10,6 +10,7 @@ import Comics from './routes/Comics';
 import Personajes from './routes/Personajes';
 import Home from './App/components/Home/Home';
 import PersonajeSelect from './routes/PersonajesSelect'
+import ComicSelect from './routes/ComicsSelect'
 import error from './App/img/404.png';
 
 const rootElement = document.getElementById('root');
@@ -42,6 +43,7 @@ render(
         /> */}
       </Route>
       <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} /> 
+      <Route path="comicseleccionado/:idcomic" element={<ComicSelect />} />
     </Routes>
   </BrowserRouter>,
   rootElement,
