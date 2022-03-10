@@ -17,8 +17,6 @@ function SearchBoxPersonajes({ search }) {
           value={text} />
         {/* <i class="bi bi-search" id="icono4"/> */}
       </center>
-
-
   )
 }
 
