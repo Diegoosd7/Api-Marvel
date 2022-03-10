@@ -19,14 +19,9 @@ export async function accedePersonajes() {
   return personajes.data.results;
 }
 
+export async function buscarPersonajes(nombre) {
+  let data = await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}&limit=100`)
+  let personajes = await data.json();
 
-// const URL_POKE = "https://pokeapi.co/api/v2/pokemon?limit=1126";
-
-// //función que devuelve todos los pokemons de la API
-// export async function getPokes(){
-//   let data = await fetch(URL_POKE);
-//   let pokes = await data.json();
-
-//   return pokes.results;
-
-// }
+  return personajes.data.results;
+}
