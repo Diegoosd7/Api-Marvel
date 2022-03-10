@@ -5,14 +5,13 @@ import SearchBoxPersonajes from '../SearchBoxPersonajes/SearchBoxPersonajes';
 
 function CharacterList({ items, isLoading, search }) {
   return isLoading
-    ? (
+    ?
       <center>
         <div className="separacion" />
         <h1 className="titulo">CARGANDO...</h1>
         <img src={escudo} alt="Escudo Capitán América girando" />
       </center>
-    )
-    : (
+    : 
       <div>
         <h2 className="titulo">PERSONAJES</h2>
         <br />
@@ -26,7 +25,6 @@ function CharacterList({ items, isLoading, search }) {
           }
         </section>
       </div>
-    );
 }
 
 export default CharacterList;
