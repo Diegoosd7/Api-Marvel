@@ -8,14 +8,14 @@ function Header() {
       <NavLink to="/home"><a href=""><img className="logo" src={logo} alt="Logo Marvel" /></a></NavLink>
       <nav>
         <Link to="/home">INICIO</Link>
-        <i class="bi bi-house" id="icono"/>
+        <i className="bi bi-house" id="icono" />
         {' '}
         <Link to="/personajes">PERSONAJES</Link>
-        <i class="bi bi-person" id="icono2" />
+        <i className="bi bi-person" id="icono2" />
         {' '}
         <Link to="/comics">COMICS</Link>
         {/* <i className="glyphicon glyphicon-book" id="icono3" /> */}
-        <i className="bi bi-book" id="icono3"/>
+        <i className="bi bi-book" id="icono3" />
       </nav>
     </header>
   );

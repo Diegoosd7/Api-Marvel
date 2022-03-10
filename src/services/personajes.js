@@ -12,14 +12,21 @@ const hash = '79b39bc45ede5e3689d0b2c12862b630';
 const publicKey = '1928dbc9bba11631437d27c1258a8e7a';
 const URLPersonajes = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}`;
 
-export function accedePersonajes() {
-  let personajes
-  fetch(URLPersonajes)
-    .then((res) => res.json())
-    .then((pjs) => {
-      //console.log(pjs.data.results);
-      personajes = pjs.data.results;
-    })
-    .catch((err) => console.log(err));
-    return personajes;
+export async function accedePersonajes() {
+  let datos = await fetch(URLPersonajes);
+  let personajes = await datos.json();
+
+  return personajes.data.results;
 }
+
+
+// const URL_POKE = "https://pokeapi.co/api/v2/pokemon?limit=1126";
+
+// //función que devuelve todos los pokemons de la API
+// export async function getPokes(){
+//   let data = await fetch(URL_POKE);
+//   let pokes = await data.json();
+
+//   return pokes.results;
+
+// }

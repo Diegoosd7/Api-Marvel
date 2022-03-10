@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import './Content.css';
 import imagen1 from '../../img/imagenes/comic.jpg';
 import imagen2 from '../../img/imagenes/personajesComics.jpg';
 import imagen3 from '../../img/imagenes/personajesComics2.jpg';
