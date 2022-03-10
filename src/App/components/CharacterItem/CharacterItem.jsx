@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function CharacterItem({ item }) {
   return (
     <div className="content">
       <div className="container">
-        <a href="#">
+        <Link to={`/personajeseleccionado/${item.id}`}>
           <img className="image" src={`${item.thumbnail.path}.jpg`} alt="" />
           <div className="titulo overlay">{item.name}</div>
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import App from './App';
 import Comics from './routes/Comics';
 import Personajes from './routes/Personajes';
 import Home from './App/components/Home/Home';
+import PersonajeSelect from './routes/PersonajesSelect'
 import error from './App/img/404.png';
 
 const rootElement = document.getElementById('root');
@@ -20,7 +21,7 @@ render(
         <Route path="home" element={<Home />} />
         <Route path="comics" element={<Comics />} />
         <Route path="personajes" element={<Personajes />} />
-        <Route
+        {/* <Route
           path="*"
           element={(
             <main style={{ padding: '1rem' }}>
@@ -38,8 +39,9 @@ render(
               <br />
             </main>
           )}
-        />
+        /> */}
       </Route>
+      <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} /> 
     </Routes>
   </BrowserRouter>,
   rootElement,
