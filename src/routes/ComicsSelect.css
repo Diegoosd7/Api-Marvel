@@ -1,5 +1,6 @@
 .infoComic{
   margin-top: 2%;
+  margin-left: 2%;
 }
 
 .informacion{
@@ -12,9 +13,10 @@
 
 .informacion2{
   display: grid;
-  grid-template-columns: 30% 20% 40%;
+  grid-template-columns: 30% 30% 30%;
   gap: 2%;
   justify-content: center;
+  justify-content: space-between;
 }
 
 .informacion__img{
@@ -22,7 +24,7 @@
 }
 
 .informacion__div__h1{
-  color: white;
+  color: #fa5f5f;
   font-size: 500%;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -33,11 +35,11 @@
 }
 
 .info__div__li--link:hover{
-  color:red;
+  color:#00ff15;
 }
   
 .informacion__div__p--titulo{
-  color: white;
+  color: #fa5f5f;
   font-size: 250%;
   font-family: 'Times New Roman', Times, serif;
 }

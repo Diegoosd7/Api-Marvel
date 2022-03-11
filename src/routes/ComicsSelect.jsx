@@ -51,7 +51,7 @@ export default function ComicSelect() {
               <div>
                 <h1 className="informacion__div__h1">{comic.title}</h1>
                 <p className="informacion__div__p">{comic.description}</p><br />
-                <p className="informacion__div__p--titulo">SERIE A LA QUE PERTENECE: <span className="blanco">{comic.series.name}</span></p><br />
+                <p className="informacion__div__p--titulo">SERIE: <span className="blanco">{comic.series.name}</span></p><br />
                 <p className="informacion__div__p--titulo">PÁGINAS: <span className="blanco">{comic.pageCount}</span></p><br />
                 <p className="informacion__div__p--titulo">PRECIO:</p><br />
                 <Precio precios={comic.prices} />
@@ -70,12 +70,13 @@ export default function ComicSelect() {
                 <Creadores creadores={comic.creators.items} />
               </div>
               <div>
-                <p className="informacion__div__p--titulo">HISTORIAS RELACIONADAS CON EL COMIC</p>
+                <p className="informacion__div__p--titulo">HISTORIAS RELACIONADAS</p>
                 <ListaHistorias historias={comic.stories.items} />
               </div>
 
             </div>
 
+            <br/>
             <p className="informacion__div__p--titulo informacion__div__p--centrado">ENLACES DE INFORMACIÓN</p>
             <URL enlaces={comic.urls} />
           </div>
