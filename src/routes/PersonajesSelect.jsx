@@ -5,6 +5,7 @@ import Header from '../App/components/Header/Header'
 import ListaComics from '../App/components/InfoPersonaje/ListaComics'
 import Series from '../App/components/InfoPersonaje/Series'
 import Eventos from '../App/components/InfoPersonaje/Eventos.jsx'
+import URL from '../App/components/InfoComics/URL'
 
 
 export default function PersonajesSelect() {
@@ -46,6 +47,11 @@ export default function PersonajesSelect() {
             <br />
             <p className="titulo">EVENTOS EN LOS QUE HA PARTICIPADO:</p>
             <Eventos eventos={personaje.events.items}/>
+            <br/>
+            {/* REUTILIZAMOS EL COMPONENTE DE LAS URL DE LOS COMICS */}
+            <p className="titulo">URLS</p>
+            <URL enlaces={personaje.urls}/>
+
           </div>
         )
       }
