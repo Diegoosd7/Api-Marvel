@@ -31,6 +31,7 @@ export default function PersonajesSelect() {
 
     async function fetchInfoPersonajes(idpersonaje){
       let personajes = await infoPersonaje(idpersonaje);
+      console.log(personajes);
       setItems(personajes);
       setLoading(false);
     }

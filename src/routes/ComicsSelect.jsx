@@ -31,6 +31,7 @@ export default function ComicSelect() {
 
     async function fetchInfoComic(idcomic){
       let comic = await infoComic(idcomic);
+      console.log(comic)
       setItems(comic);
       setLoading(false);
     }
