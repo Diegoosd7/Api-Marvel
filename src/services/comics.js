@@ -20,8 +20,15 @@ export async function accedeComics() {
 }
 
 export async function buscarComics(nombre) {
-  let data = await fetch(`http://gateway.marvel.com/v1/public/comics?titleStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}&limit=100`)
+  let data = await fetch(`http://gateway.marvel.com/v1/public/comics?titleStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}&limit=52`)
   let comics = await data.json();
 
   return comics.data.results;
+}
+
+export async function infoComic(id){
+  let data = await fetch (`http://gateway.marvel.com/v1/public/comics/${id}?ts=1&apikey=${publicKey}&hash=${hash}&limit=52`);
+  let comic = await data.json();
+
+  return comic.data.results;
 }
