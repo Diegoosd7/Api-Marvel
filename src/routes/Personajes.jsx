@@ -39,7 +39,6 @@ export default function Personajes() {
         let personajes = await accedePersonajes();
         console.log(personajes);
         setItems(personajes);
-        console.log(items)
         setLoading(false);
       }
       //llamamos a la función
