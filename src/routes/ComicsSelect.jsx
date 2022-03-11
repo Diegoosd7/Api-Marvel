@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Header from "../App/components/Header/Header.jsx";
 import { useParams } from "react-router-dom";
-import "./ComicsSelect.css"; 
+import "./ComicsSelect.css";
+import Precio from '../App/components/InfoComics/Precio'
+import ListaPersonajes from '../App/components/InfoComics/ListaPersonajes'
+import Creadores from '../App/components/InfoComics/Creadores'
+import ListaHistorias from '../App/components/InfoComics/ListaHistorias'
+import URL from '../App/components/InfoComics/URL'
 
-var titulo;
-var description ;
-var img;
 
 
 export default function ComicSelect() {
@@ -24,36 +26,41 @@ export default function ComicSelect() {
       .then((comic) => {
         console.log(comic.data.results);
         setItems(comic.data.results);
-        console.log(items);
       })
       .catch((err) => console.log(err));
   }, []);
-  {
-    items.map((item) => {
-      //<div className="titulo">{item.description}</div>;
-      /*console.log(item.name);
-      console.log(item.description);
-      console.log(item.comics);
-      console.log(item.stories);
-      console.log(item.events);
-      console.log(item.series); */
-      titulo = item.title ;
-      img = `${item.thumbnail.path}.jpg`;
-      description = item.description ;
-    });
-  }
 
-  console.log(titulo);
   return (
     <div>
       <Header />
-      <div className="cajaFoto">
-        <img src={img} className="fotoSelect" alt="" />
-      </div>
-      <div className="cajaTexto">
-        <h1 className="tituloP">{titulo}</h1>
-        <div>{description}</div>
-      </div>
+      {
+        items.map(comic =>
+          <div>
+            <img src={`${comic.thumbnail.path}.jpg`} alt="" />
+            <h1 className="titulo">{comic.title}</h1>
+            <p className="titulo">{comic.description}</p>
+            <br/>
+            <p className="titulo">SERIE A LA QUE PERTENECE: {comic.series.name}</p>
+            <br/>
+            <p className="titulo">PRECIO</p>
+            <Precio precios={comic.prices}/>
+            <br/>
+            <p className="titulo">PÁGINAS: {comic.pageCount}</p>
+            <br/>
+            <p className="titulo">PERSONAJES QUE APARECEN</p>
+            <ListaPersonajes personajes ={comic.characters.items}/>
+            <br/>
+            <p className="titulo">CREADORES</p>
+            <Creadores creadores={comic.creators.items}/>
+            <br/>
+            <p className="titulo">HISTORIAS RELACIONADAS CON EL COMIC</p>
+            <ListaHistorias historias={comic.stories.items}/>
+            <br/>
+            <p className="titulo">URL </p>
+            <URL enlaces={comic.urls}/>
+          </div>
+        )
+      }
     </div>
   );
 }
