@@ -1,12 +1,15 @@
 import React from "react";
 
 function Eventos({ eventos }) {
-    return(
-        <ul>
-            {eventos.map(item =><li className="titulo">{item.name}</li>)}
-   
-       </ul>
-       )
+    return (
+        <div className="centrar">
+            <ul>
+                {eventos.map(item =><li className="info__div__li--sinPunto">{item.name}</li>)}
+
+            </ul>
+        </div>
+
+    )
 
 }
 

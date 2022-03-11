@@ -12,7 +12,7 @@ function ListaComics({ comics }) {
 
                 return (
                 <Link to={`/comicseleccionado/${url}`}>
-                    <li className="titulo">{item.name}</li>
+                    <li className="info__div__li info__div__li--link">{item.name}</li>
                 </Link>)
 
             }

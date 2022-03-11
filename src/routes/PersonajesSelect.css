@@ -1,4 +1,4 @@
-.fotoSelect {
+/* .fotoSelect {
     margin-top: 50px;
     margin-left: 50px;
     width: 400px;
@@ -14,5 +14,61 @@
     width: 500px;
     color: white;
     font-size: 20px;
-  }
+  } */
+.infoPersonaje{
+  margin-top: 2%;
+}
+
+.info{
+  display: grid;
+  grid-template-columns: 30% 60%;
+  gap: 3%;
+  row-gap: 5%;
+  justify-content: center;
+}
+
+.info__img{
+  width: 80%;
+  /*height: 298px;*/
+}
+
+.info__div__p, .info__div__li{
+  color: white;
+  font-size: large;
+}
+
+.info__div__li--sinPunto{
+  color: white;
+  font-size: large;
+  text-align: center;
+  list-style: none;
+}
+
+.info__div__li--link:hover, .info__a:hover{
+  color: red;
+}
+
+.info__div__h1{
+  color: white;
+  font-size: 600%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.info__div__p--titulo{
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.info__a{
+  color:white;
+  text-align: center;
+  font-size: large;
+}
+
+.centrar{
+  text-align:center;
+}
+
   

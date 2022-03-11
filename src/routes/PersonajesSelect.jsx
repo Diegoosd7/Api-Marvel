@@ -29,7 +29,7 @@ export default function PersonajesSelect() {
     //   })
     //   .catch((err) => console.log(err));
 
-    async function fetchInfoPersonajes(idpersonaje){
+    async function fetchInfoPersonajes(idpersonaje) {
       let personajes = await infoPersonaje(idpersonaje);
       console.log(personajes);
       setItems(personajes);
@@ -44,23 +44,32 @@ export default function PersonajesSelect() {
       <Header />
       {
         items.map(personaje =>
-          <div>
-            <img src={`${personaje.thumbnail.path}.jpg`} alt="" />
-            <h1 className="titulo">{personaje.name}</h1>
-            <p className="titulo">{personaje.description}</p>
-            <br />
-            <p className="titulo">COMICS DONDE APARECE:</p>
-            <ListaComics comics={personaje.comics.items} />
-            <br />
-            <p className="titulo">SERIES DONDE APARECE:</p>
-            <Series series={personaje.series.items} />
-            <br />
-            <p className="titulo">EVENTOS EN LOS QUE HA PARTICIPADO:</p>
-            <Eventos eventos={personaje.events.items}/>
-            <br/>
+          <div className="infoPersonaje">
+            <div className="info">
+              <img src={`${personaje.thumbnail.path}.jpg`} className="info__img" alt="Foto Personaje" />
+              <div>
+                <h1 className="info__div__h1">{personaje.name}</h1>
+                <div className="separacion"></div>
+                <p className="info__div__p">{personaje.description}</p>
+              </div>
+              <div>
+                <p className="info__div__p--titulo">COMICS DONDE APARECE:</p>
+                <ListaComics comics={personaje.comics.items} />
+              </div>
+              <div>
+                <p className="info__div__p--titulo">SERIES DONDE APARECE:</p>
+                <Series series={personaje.series.items} />
+              </div>
+            </div>
+
+            <div className="separacion"></div>
+            <div className="separacion"></div>
+            <p className="info__div__p--titulo">EVENTOS EN LOS QUE HA PARTICIPADO:</p>
+            <Eventos eventos={personaje.events.items} />
+            <div className="separacion"></div>
             {/* REUTILIZAMOS EL COMPONENTE DE LAS URL DE LOS COMICS */}
-            <p className="titulo">URLS</p>
-            <URL enlaces={personaje.urls}/>
+            <p className="info__div__p--titulo">URLS</p>
+            <URL enlaces={personaje.urls} />
 
           </div>
         )
