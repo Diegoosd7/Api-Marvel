@@ -1,18 +1,51 @@
-.fotoSelect {
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 400px;
-    height: 400px;
-  }
-  .cajaFoto {
-    float: left;
-  }
-  .cajaTexto {
-    float: left;
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 500px;
-    color: white;
-    font-size: 20px;
-  }
+.infoComic{
+  margin-top: 2%;
+}
+
+.informacion{
+  display: grid;
+  grid-template-columns: 30% 60%;
+  gap: 3%;
+  row-gap: 5%;
+  justify-content: center;
+}
+
+.informacion2{
+  display: grid;
+  grid-template-columns: 30% 20% 40%;
+  gap: 2%;
+  justify-content: center;
+}
+
+.informacion__img{
+  width: 80%;
+}
+
+.informacion__div__h1{
+  color: white;
+  font-size: 500%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.informacion__div__p,.informacion__div__li{
+  color: white;
+  font-size: medium;
+}
+
+.info__div__li--link:hover{
+  color:red;
+}
   
+.informacion__div__p--titulo{
+  color: white;
+  font-size: 250%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.informacion__div__p--centrado{
+  text-align: center;
+}
+
+.blanco{
+  color: white;
+}

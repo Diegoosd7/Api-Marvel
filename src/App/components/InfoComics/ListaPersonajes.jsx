@@ -12,7 +12,7 @@ function ListaPersonajes({ personajes }) {
 
                 return (
                     <Link to={`/personajeseleccionado/${url}`}>
-                        <li className="titulo">{item.name}</li>
+                        <li className="info__div__li--link informacion__div__li">{item.name}</li>
                     </Link>
                 )
             })}

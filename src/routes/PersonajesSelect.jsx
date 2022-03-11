@@ -68,7 +68,7 @@ export default function PersonajesSelect() {
             <Eventos eventos={personaje.events.items} />
             <div className="separacion"></div>
             {/* REUTILIZAMOS EL COMPONENTE DE LAS URL DE LOS COMICS */}
-            <p className="info__div__p--titulo">URLS</p>
+            <p className="info__div__p--titulo">ENLACES DE INFORMACIÓN</p>
             <URL enlaces={personaje.urls} />
 
           </div>

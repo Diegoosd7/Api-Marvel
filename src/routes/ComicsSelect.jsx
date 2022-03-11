@@ -29,7 +29,7 @@ export default function ComicSelect() {
     //   })
     //   .catch((err) => console.log(err));
 
-    async function fetchInfoComic(idcomic){
+    async function fetchInfoComic(idcomic) {
       let comic = await infoComic(idcomic);
       console.log(comic)
       setItems(comic);
@@ -45,29 +45,39 @@ export default function ComicSelect() {
       <Header />
       {
         items.map(comic =>
-          <div>
-            <img src={`${comic.thumbnail.path}.jpg`} alt="" />
-            <h1 className="titulo">{comic.title}</h1>
-            <p className="titulo">{comic.description}</p>
-            <br/>
-            <p className="titulo">SERIE A LA QUE PERTENECE: {comic.series.name}</p>
-            <br/>
-            <p className="titulo">PRECIO</p>
-            <Precio precios={comic.prices}/>
-            <br/>
-            <p className="titulo">PÁGINAS: {comic.pageCount}</p>
-            <br/>
-            <p className="titulo">PERSONAJES QUE APARECEN</p>
-            <ListaPersonajes personajes ={comic.characters.items}/>
-            <br/>
-            <p className="titulo">CREADORES</p>
-            <Creadores creadores={comic.creators.items}/>
-            <br/>
-            <p className="titulo">HISTORIAS RELACIONADAS CON EL COMIC</p>
-            <ListaHistorias historias={comic.stories.items}/>
-            <br/>
-            <p className="titulo">URL </p>
-            <URL enlaces={comic.urls}/>
+          <div className="infoComic">
+            <div className="informacion">
+              <img src={`${comic.thumbnail.path}.jpg`} className="informacion__img" alt="Portada Comic" />
+              <div>
+                <h1 className="informacion__div__h1">{comic.title}</h1>
+                <p className="informacion__div__p">{comic.description}</p><br />
+                <p className="informacion__div__p--titulo">SERIE A LA QUE PERTENECE: <span className="blanco">{comic.series.name}</span></p><br />
+                <p className="informacion__div__p--titulo">PÁGINAS: <span className="blanco">{comic.pageCount}</span></p><br />
+                <p className="informacion__div__p--titulo">PRECIO:</p><br />
+                <Precio precios={comic.prices} />
+              </div>
+            </div>
+
+            <div className="separacion"></div>
+
+            <div className="informacion2">
+              <div>
+                <p className="informacion__div__p--titulo">PERSONAJES QUE APARECEN</p>
+                <ListaPersonajes personajes={comic.characters.items} />
+              </div>
+              <div>
+                <p className="informacion__div__p--titulo">CREADORES</p>
+                <Creadores creadores={comic.creators.items} />
+              </div>
+              <div>
+                <p className="informacion__div__p--titulo">HISTORIAS RELACIONADAS CON EL COMIC</p>
+                <ListaHistorias historias={comic.stories.items} />
+              </div>
+
+            </div>
+
+            <p className="informacion__div__p--titulo informacion__div__p--centrado">ENLACES DE INFORMACIÓN</p>
+            <URL enlaces={comic.urls} />
           </div>
         )
       }
