@@ -6,6 +6,7 @@ import ListaComics from '../App/components/InfoPersonaje/ListaComics'
 import Series from '../App/components/InfoPersonaje/Series'
 import Eventos from '../App/components/InfoPersonaje/Eventos.jsx'
 import URL from '../App/components/InfoComics/URL'
+import { infoPersonaje } from '../services/personajes';
 
 
 export default function PersonajesSelect() {
@@ -15,18 +16,26 @@ export default function PersonajesSelect() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const hash = "79b39bc45ede5e3689d0b2c12862b630";
-    const publicKey = "1928dbc9bba11631437d27c1258a8e7a";
-    const urlAPI = `http://gateway.marvel.com/v1/public/characters/${idpersonaje}?ts=1&apikey=${publicKey}&hash=${hash}`;
-    console.log(urlAPI);
-    fetch(urlAPI)
-      .then((res) => res.json())
-      .then((personaje) => {
-        console.log(personaje.data.results);
-        setItems(personaje.data.results);
-        //console.log(items);
-      })
-      .catch((err) => console.log(err));
+    // const hash = "79b39bc45ede5e3689d0b2c12862b630";
+    // const publicKey = "1928dbc9bba11631437d27c1258a8e7a";
+    // const urlAPI = `http://gateway.marvel.com/v1/public/characters/${idpersonaje}?ts=1&apikey=${publicKey}&hash=${hash}`;
+    // console.log(urlAPI);
+    // fetch(urlAPI)
+    //   .then((res) => res.json())
+    //   .then((personaje) => {
+    //     console.log(personaje.data.results);
+    //     setItems(personaje.data.results);
+    //     //console.log(items);
+    //   })
+    //   .catch((err) => console.log(err));
+
+    async function fetchInfoPersonajes(idpersonaje){
+      let personajes = await infoPersonaje(idpersonaje);
+      setItems(personajes);
+      setLoading(false);
+    }
+
+    fetchInfoPersonajes(idpersonaje);
   }, []);
 
   return (
