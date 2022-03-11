@@ -1,8 +1,12 @@
 import React from "react";
 
 function Eventos({ eventos }) {
-    return (eventos.map((item =><p className="titulo">{item.name}</p>
-    )))
+    return(
+        <ul>
+            {eventos.map(item =><li className="titulo">{item.name}</li>)}
+   
+       </ul>
+       )
 
 }
 

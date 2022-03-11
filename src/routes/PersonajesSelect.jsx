@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Header from "../App/components/Header/Header.jsx";
 import { useParams } from "react-router-dom";
-import './PersonajesSelect.css'; 
+import './PersonajesSelect.css';
+import Header from '../App/components/Header/Header'
+import ListaComics from '../App/components/InfoPersonaje/ListaComics'
+import Series from '../App/components/InfoPersonaje/Series'
+import Eventos from '../App/components/InfoPersonaje/Eventos.jsx'
 
 var nombre;
 var description;
 var img;
+var comics = [];
+var titulo;
 
 export default function PersonajesSelect() {
   let params = useParams();
@@ -23,36 +28,50 @@ export default function PersonajesSelect() {
       .then((personaje) => {
         console.log(personaje.data.results);
         setItems(personaje.data.results);
-        console.log(items);
+        //console.log(items);
       })
       .catch((err) => console.log(err));
   }, []);
-  {
-    items.map((item) => {
-      //<div className="titulo">{item.description}</div>;
-      /*console.log(item.name);
-      console.log(item.description);
-      console.log(item.comics);
-      console.log(item.stories);
-      console.log(item.events);
-      console.log(item.series); */
-      nombre = item.name;
-      img = `${item.thumbnail.path}.jpg`;
-      description = item.description;
-    });
-  }
+  // {
+  //   items.map((item) => {
+  //     nombre = item.name;
+  //     img = `${item.thumbnail.path}.jpg`;
+  //     description = item.description;
 
-  console.log(nombre);
+  //     // item.comics.items.map((item=>{
+  //     //   console.log(item.name)
+  //     //   return comics=item.name
+  //     // }))
+  //     comics = item.comics.items
+
+  //     //console.log(item.comics.items)
+  //     // console.log(item.comics.items[0].name)
+
+  //   });
+  // }
+
   return (
     <div>
       <Header />
-      <div className="cajaFoto">
-        <img src={img} className="fotoSelect" alt="" />
-      </div>
-      <div className="cajaTexto">
-        <h1 className="tituloP">{nombre}</h1>
-        <div>{description}</div>
-      </div>
+      {
+        items.map((personaje =>
+          <div>
+            <img src={`${personaje.thumbnail.path}.jpg`} alt="" />
+            <h1 className="titulo">{personaje.name}</h1>
+            <p className="titulo">{personaje.description}</p>
+            <br />
+            <p className="titulo">COMICS DONDE APARECE:</p>
+            <ListaComics comics={personaje.comics.items} />
+            <br />
+            <p className="titulo">SERIES DONDE APARECE:</p>
+            <Series series={personaje.series.items} />
+            <br />
+            <p className="titulo">EVENTOS EN LOS QUE HA PARTICIPADO:</p>
+            <Eventos eventos={personaje.events.items}/>
+          </div>
+        ))
+      }
+      {/* comics.map((item => <p className="titulo">{item.name}</p>)) */}
     </div>
   );
 }
