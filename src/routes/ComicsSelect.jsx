@@ -10,31 +10,23 @@ import { infoComic } from '../services/comics';
 
 
 export default function ComicSelect() {
-  let params = useParams();
-  let idcomic = parseInt(params.idcomic, 10);
+  //ESTO ES PARA PASARLE COMO PARÁMETRO A LA RUTA EL ID DEL COMIC CUANDO PINCHES EN SU FOTO. 
+  let params = useParams(); // (UseParams es para rutas)
+  let idcomic = parseInt(params.idcomic, 10); //Le hacemos un parseINT para guardarlo como número
 
+  //CREAMOS UN HOOK PARA ALMACENAR EL COMIC EN UN ARRAY Y PASARSELO A OTROS COMPONENTES
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // const hash = "79b39bc45ede5e3689d0b2c12862b630";
-    // const publicKey = "1928dbc9bba11631437d27c1258a8e7a";
-    // const urlAPI = `http://gateway.marvel.com/v1/public/comics/${idcomic}?ts=1&apikey=${publicKey}&hash=${hash}`;
-    // console.log(urlAPI);
-    // fetch(urlAPI)
-    //   .then((res) => res.json())
-    //   .then((comic) => {
-    //     console.log(comic.data.results);
-    //     setItems(comic.data.results);
-    //   })
-    //   .catch((err) => console.log(err));
-
+    //Función que ejecuta la función de buscar un comic según el id que le pasamos
     async function fetchInfoComic(idcomic) {
-      let comic = await infoComic(idcomic);
+      let comic = await infoComic(idcomic); //Le pasamos, a la función creada en services, el id del Comic que pinchamos
       console.log(comic)
-      setItems(comic);
-      setLoading(false);
+      setItems(comic); // Le metemos al hook que hemos creado arriba, el comic que nos devuelve la funcion
+      setLoading(false); // La página de cargando seguirá hasta que se devuelva el comic y entonces, se ejecutará esta línea y se quitará el escudo
     }
 
+    //Llamamos a la funcion
     fetchInfoComic(idcomic);
 
   }, []);
@@ -42,17 +34,18 @@ export default function ComicSelect() {
   return (
     <div>
       {
+        //MAPEAMOS (RECORRER) EL ARRAY Y POR CADA COMIC LE SACAMOS LOS SIGUIENTES DATOS. (SOLO HAY UN COMIC EN EL ARRAY)
         items.map(comic =>
           <div className="infoComic">
             <div className="informacion">
-              <img src={`${comic.thumbnail.path}.jpg`} className="informacion__img" alt="Portada Comic" />
+              <img src={`${comic.thumbnail.path}.jpg`} className="informacion__img" alt="Portada Comic" /> {/* Foto del comic*/}
               <div>
-                <h1 className="informacion__div__h1">{comic.title}</h1>
-                <p className="informacion__div__p">{comic.description}</p><br />
-                <p className="informacion__div__p--titulo">SERIE: <span className="blanco">{comic.series.name}</span></p><br />
-                <p className="informacion__div__p--titulo">PÁGINAS: <span className="blanco">{comic.pageCount}</span></p><br />
+                <h1 className="informacion__div__h1">{comic.title}</h1> {/* Precio del comic*/}
+                <p className="informacion__div__p">{comic.description}</p><br /> {/* Descripcion del comic*/}
+                <p className="informacion__div__p--titulo">SERIE: <span className="blanco">{comic.series.name}</span></p><br /> {/* Serie a la que pertenece el comic*/}
+                <p className="informacion__div__p--titulo">PÁGINAS: <span className="blanco">{comic.pageCount}</span></p><br /> {/* Páginas que tiene el comic*/}
                 <p className="informacion__div__p--titulo">PRECIO:</p><br />
-                <Precio precios={comic.prices} />
+                <Precio precios={comic.prices} /> {/* Le pasamos un array con los precios del comic*/}
               </div>
             </div>
 
@@ -61,22 +54,22 @@ export default function ComicSelect() {
             <div className="informacion2">
               <div>
                 <p className="informacion__div__p--titulo">PERSONAJES QUE APARECEN</p>
-                <ListaPersonajes personajes={comic.characters.items} />
+                <ListaPersonajes personajes={comic.characters.items} /> {/* Le pasamos un array con los personajes del comic*/}
               </div>
               <div>
                 <p className="informacion__div__p--titulo">CREADORES</p>
-                <Creadores creadores={comic.creators.items} />
+                <Creadores creadores={comic.creators.items} /> {/* Le pasamos un array con los creadores del comic*/}
               </div>
               <div>
                 <p className="informacion__div__p--titulo">HISTORIAS RELACIONADAS</p>
-                <ListaHistorias historias={comic.stories.items} />
+                <ListaHistorias historias={comic.stories.items} /> {/* Le pasamos un array con las historias relacionas con el comic*/}
               </div>
 
             </div>
 
-            <br/>
+            <br />
             <p className="informacion__div__p--titulo informacion__div__p--centrado">ENLACES DE INFORMACIÓN</p>
-            <URL enlaces={comic.urls} />
+            <URL enlaces={comic.urls} />  {/* Le pasamos un array con los enlace de información del comic*/}
           </div>
         )
       }
