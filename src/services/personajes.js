@@ -10,7 +10,7 @@
 
 const hash = '79b39bc45ede5e3689d0b2c12862b630';
 const publicKey = '1928dbc9bba11631437d27c1258a8e7a';
-const URLPersonajes = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}&limit=52`;
+const URLPersonajes = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}&limit=36`;
 
 export async function accedePersonajes() {
   let datos = await fetch(URLPersonajes);
@@ -20,14 +20,14 @@ export async function accedePersonajes() {
 }
 
 export async function buscarPersonajes(nombre) {
-  let data = await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}&limit=52`)
+  let data = await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}&limit=36`)
   let personajes = await data.json();
 
   return personajes.data.results;
 }
 
 export async function infoPersonaje(id){
-  let data = await fetch (`http://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${publicKey}&hash=${hash}&limit=52`);
+  let data = await fetch (`http://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${publicKey}&hash=${hash}`);
   let personaje = await data.json();
 
   return personaje.data.results;
