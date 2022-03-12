@@ -10,4 +10,6 @@ function Creadores({ creadores }) {
 
 }
 
+/* NO PONGO EL PROPTYPE DE CREADORES PORQUE EL ARRAY TIENE MUCHOS DATOS */
+
 export default Creadores

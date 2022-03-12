@@ -23,4 +23,6 @@ function ListaComics({ comics }) {
 
 }
 
+/* NO PONGO EL PROPTYPE DE COMICS PORQUE EL ARRAY TIENE MUCHOS DATOS */
+
 export default ListaComics

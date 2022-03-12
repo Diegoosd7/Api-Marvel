@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function URL({ enlaces }) {
     return (enlaces.map(item => {
@@ -9,6 +10,13 @@ function URL({ enlaces }) {
         )
     }
     ))
+}
+
+URL.propTypes = {
+    enlaces: PropTypes.arrayOf(PropTypes.shape({
+        type: PropTypes.string,
+        url: PropTypes.string,
+    }))
 }
 
 export default URL

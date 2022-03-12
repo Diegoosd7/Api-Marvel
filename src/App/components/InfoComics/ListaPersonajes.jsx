@@ -22,4 +22,6 @@ function ListaPersonajes({ personajes }) {
 
 }
 
+/* NO PONGO EL PROPTYPE DE PERSONAJES PORQUE EL ARRAY TIENE MUCHOS DATOS */
+
 export default ListaPersonajes

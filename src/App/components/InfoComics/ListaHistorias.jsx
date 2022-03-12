@@ -10,4 +10,6 @@ function ListaHistorias({ historias }) {
 
 }
 
+/* NO PONGO EL PROPTYPE DE STORIES PORQUE EL ARRAY TIENE MUCHOS DATOS */
+
 export default ListaHistorias

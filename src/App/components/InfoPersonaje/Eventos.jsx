@@ -13,4 +13,6 @@ function Eventos({ eventos }) {
 
 }
 
+/* NO PONGO EL PROPTYPE DE EVENTOS PORQUE EL ARRAY TIENE MUCHOS DATOS */
+
 export default Eventos

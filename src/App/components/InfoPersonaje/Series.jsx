@@ -10,4 +10,6 @@ function Series({ series }) {
 
 }
 
+/* NO PONGO EL PROPTYPE DE SERIES PORQUE EL ARRAY TIENE MUCHOS DATOS */
+
 export default Series
