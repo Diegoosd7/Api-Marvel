@@ -1,72 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import CharacterList from '../App/components/CharacterList/CharacterList';
 import { accedePersonajes, buscarPersonajes } from '../services/personajes';
-import SearchBoxPersonajes from '../App/components/SearchBoxPersonajes/SearchBoxPersonajes';
 import './Personajes.css';
-import "babel-polyfill";
+import "babel-polyfill"; // ESTO ES PARA QUE FUNCIONEN LAS FUNCIONES ASÍNCRONAS
 
-const hash = '79b39bc45ede5e3689d0b2c12862b630';
-const publicKey = '1928dbc9bba11631437d27c1258a8e7a';
+
 
 export default function Personajes() {
-  const [items, setItems] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-  const [buscar, setBuscar] = useState('');
+  //CREAMOS LOS HOOKS QUE VAMOS A NECESITAR PARA PASAR LAS PROPS A OTROS COMPONENTES
+  const [items, setItems] = useState([]); //En este hook se almacenarán los personajes
+  const [isLoading, setLoading] = useState(true); //En este hook se almacenará si la página todavía no ha recibido los datos de la API
+  const [buscar, setBuscar] = useState(''); //En este hook se almacenará lo que se escriba en el buscador
 
+  //EL USE EFFECT SE CARGA NADA MÁS EJECUTAR EL COMPONENTE.
+  //LE PASAMOS LO QUE ESCRIBIMOS EN EL BUSCADOR, PARA QUE SE EJECUTE CON CADA CAMBIO EN EL INPUT DEL BUSCADOR  (ES EL VALOR QUE SE LE PASA AL FINAL)
   useEffect(() => {
-    // async function fetchPersonajes() {
-    //   let personajes = await accedePersonajes();
-    //   console.log(personajes);
-    //   setItems(personajes);
-    // }
 
+    //SI EL BUSCADOR ESTÁ VACÍO, CARGAMOS LA LISTA CON 36 PERSONAJES
     if (buscar === '') {
-      // const urlAPI = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}`;
 
-      // fetch(urlAPI)
-      //   .then((res) => res.json())
-      //   .then((personajes) => {
-      //     // console.log("Llego aqui");
-      //     console.log(personajes);
-      //     console.log(personajes.data.results);
-      //     setItems(personajes.data.results);
-      //     // console.log(items);
-      //     setLoading(false);
-      //   })
-      //   .catch((err) => console.log(err));
-
+      // Función que ejecuta la función que devuelve 36 personajes
       async function fetchPersonajes() {
         let personajes = await accedePersonajes();
         console.log(personajes);
-        setItems(personajes);
-        setLoading(false);
+        setItems(personajes); // Le metemos al hook que hemos creado arriba, los personajes que nos devuelve la funcion
+        setLoading(false); // La página de cargando seguirá hasta que se devuelvan todos los personajes y entonces, se ejecutará esta línea y se quitará el escudo
       }
-      //llamamos a la función
+
+      //Llamamos a la función
       fetchPersonajes();
 
     } else {
-      // const busqueda = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${buscar}&ts=1&apikey=${publicKey}&hash=${hash}&limit=100`;
-      // fetch(busqueda)
-      //   .then((respuesta) => respuesta.json())
-      //   .then((personajeBuscado) => {
-      //     console.log(personajeBuscado.data.results);
-      //     setItems(personajeBuscado.data.results);
-      //     setLoading(false);
-      //   });
 
-      async function fetchBuscarPersonajes(buscar){
+      //SI EL BUSCADOR NO ESTÁ VACÍO, LLAMAMOS A LA FUNCION BUSCAR PERSONAJES CREADA EN SERVICIOS Y LE PASAMOS LO QUE HA ESCRITO EN EL BUSCADOR
+      async function fetchBuscarPersonajes(buscar) {
         let personajes = await buscarPersonajes(buscar);
-        setItems(personajes);
-        setLoading(false);
+        setItems(personajes); // Le metemos al hook que hemos creado arriba, los personajes que nos devuelve la funcion
+        setLoading(false); // La página de cargando seguirá hasta que se devuelvan todos los personajes y entonces, se ejecutará esta línea y se quitará el escudo
       }
 
+      //Llamamos a la función
       fetchBuscarPersonajes(buscar);
+
     }
-  }, [buscar]); // Le pasamos el input del buscador como parámetro para que cada vez que se actualice, haga una llamada a la API
+  }, [buscar]);
 
   return (
     <main style={{ padding: '1rem 0' }}>
-      {/* <SearchBoxPersonajes search={(q) => setBuscar(q)} /> */}
+      {/* Le pasamos al componente como props el array con los personajes, si está cargando la web y una función que se ejecuta cuando escribes en el buscador*/}
       <CharacterList items={items} isLoading={isLoading} search={q => setBuscar(q)} />
     </main>
   );
