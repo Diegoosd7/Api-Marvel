@@ -18,7 +18,7 @@ function CharacterList({ items, isLoading, search }) {
         <br />
         <SearchBoxPersonajes search={search} />
         <div className="separacion" />
-        <section className="contents">
+        <section className="cartas">
           {
             items.map((item) => (
               <CharacterItem key={item.id} item={item} />
