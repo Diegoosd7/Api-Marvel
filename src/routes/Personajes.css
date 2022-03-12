@@ -6,7 +6,7 @@ body {
   /*CONTENEDOR CON TODAS LOS PERSONAJES*/
   display: grid;
   grid-template-columns: repeat(4, 22%);
-  gap: 1%; 
+  row-gap: 1%; 
   column-gap: 3%;
   justify-content: center;
 }

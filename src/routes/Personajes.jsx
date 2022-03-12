@@ -67,7 +67,7 @@ export default function Personajes() {
   return (
     <main style={{ padding: '1rem 0' }}>
       {/* <SearchBoxPersonajes search={(q) => setBuscar(q)} /> */}
-      <CharacterList items={items} isLoading={isLoading} search={(q) => setBuscar(q)} />
+      <CharacterList items={items} isLoading={isLoading} search={q => setBuscar(q)} />
     </main>
   );
 }

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import './SearchBoxPersonajes.css';
 
 function SearchBoxPersonajes({ search }) {
@@ -18,6 +19,10 @@ function SearchBoxPersonajes({ search }) {
         {/* <i class="bi bi-search" id="icono4"/> */}
       </center>
   )
+}
+
+SearchBoxPersonajes.propType = {
+  search: PropTypes.func,
 }
 
 export default SearchBoxPersonajes;

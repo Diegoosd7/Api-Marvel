@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import ComicItem from '../ComicItem/ComicItem';
 import SearchBoxComics from '../SearchBoxComics/SearchBoxComics';
 import escudo from '../../img/loading2.gif'
@@ -26,6 +27,12 @@ function ComicList({ items, isLoading, search }) {
         </section>
       </div>
     );
+}
+
+ComicList.propType = {
+  isLoading: PropTypes.bool,
+  search: PropTypes.func,
+  /* NO PONGO EL PROPTYPE DE ITEMS PORQUE EL ARRAY TIENE MUCHOS DATOS */
 }
 
 export default ComicList;

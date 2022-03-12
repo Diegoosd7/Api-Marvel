@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import CharacterItem from '../CharacterItem/CharacterItem';
 import escudo from '../../img/loading2.gif';
 import SearchBoxPersonajes from '../SearchBoxPersonajes/SearchBoxPersonajes';
@@ -32,5 +33,13 @@ function CharacterList({ items, isLoading, search }) {
       </div>
     );
 }
+
+
+CharacterList.propType = {
+  isLoading: PropTypes.bool,
+  search: PropTypes.func,
+  /* NO PONGO EL PROPTYPE DE ITEMS PORQUE EL ARRAY TIENE MUCHOS DATOS */
+}
+
 
 export default CharacterList;
