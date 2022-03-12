@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 
 function ComicItem({ item }) {
   return (
-    <div className="content2">
-      <div className="container2">
+      <div className="listado--hover">
         <Link to={`/comicseleccionado/${item.id}`}>
-          <img className="image2" src={`${item.thumbnail.path}.jpg`} alt="Portada Comic" />
-          <div className="overlay2 titulo">{item.title}</div>
+          <img className="listado--hover__img" src={`${item.thumbnail.path}.jpg`} alt="Portada Comic" />
+          <div className="listado--hover__p">{item.title}</div>
         </Link>
       </div>
-    </div>
   );
 }
 

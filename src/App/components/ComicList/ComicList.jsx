@@ -17,7 +17,7 @@ function ComicList({ items, isLoading, search }) {
         <br />
         <SearchBoxComics search={search}/>
         <div className="separacion" />
-        <section className="contents2">
+        <section className="listado">
           {
             items.map((item) => (
               <ComicItem key={item.id} item={item} />
