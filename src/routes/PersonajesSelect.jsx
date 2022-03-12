@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './PersonajesSelect.css';
-import Header from '../App/components/Header/Header'
 import ListaComics from '../App/components/InfoPersonaje/ListaComics'
 import Series from '../App/components/InfoPersonaje/Series'
 import Eventos from '../App/components/InfoPersonaje/Eventos.jsx'
@@ -41,7 +40,6 @@ export default function PersonajesSelect() {
 
   return (
     <div>
-      <Header />
       {
         items.map(personaje =>
           <div className="infoPersonaje">

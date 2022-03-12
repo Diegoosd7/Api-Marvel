@@ -20,11 +20,13 @@
   position: relative;
   width: 100%;
 }
+
 .image2 {
   display: block;
   width: 100%;
   height: auto;
 }
+
 .overlay2 {
   position: absolute;
   bottom: 0;
@@ -32,12 +34,20 @@
   width: 100%;
   padding: 13%;
   transition: 0.8s ease;
-  opacity: 0; /*Si lo quitas, el cartel se queda fijo*/
+  opacity: 0;
+  /*Si lo quitas, el cartel se queda fijo*/
   color: white;
   font-size: 20px;
   text-align: center;
 }
+
 .container2:hover .overlay2 {
   opacity: 1;
 }
 
+.titulosPrincipales {
+  text-align: center;
+  color: #fd7070;
+  font-size: 500%;
+  font-family: 'Times New Roman', Times, serif;
+}

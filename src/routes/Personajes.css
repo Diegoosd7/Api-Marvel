@@ -6,7 +6,8 @@ body {
   /*CONTENEDOR CON TODAS LOS PERSONAJES*/
   display: grid;
   grid-template-columns: repeat(4, 22%);
-  gap: 3%; /*SI SALEN 100, BAJARLO A 1 */
+  gap: 3%;
+  /*SI SALEN 100, BAJARLO A 1 */
   justify-content: center;
 }
 
@@ -15,7 +16,7 @@ body {
   height: 298px;
 }
 
-.content a{
+.content a {
   text-decoration: none;
 }
 
@@ -24,11 +25,13 @@ body {
   position: relative;
   width: 100%;
 }
+
 .image {
   display: block;
   width: 100%;
   height: auto;
 }
+
 .overlay {
   position: absolute;
   bottom: 0;
@@ -42,7 +45,14 @@ body {
   font-size: 20px;
   text-align: center;
 }
+
 .container:hover .overlay {
   opacity: 1;
 }
 
+.titulosPrincipales {
+  text-align: center;
+  color: #fd7070;
+  font-size: 500%;
+  font-family: 'Times New Roman', Times, serif;
+}

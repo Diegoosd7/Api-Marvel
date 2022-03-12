@@ -8,13 +8,13 @@ function CharacterList({ items, isLoading, search }) {
     ? (
       <center>
         <div className="separacion" />
-        <h1 className="titulo">CARGANDO...</h1>
+        <h1 className="titulosPrincipales">CARGANDO...</h1>
         <img src={escudo} alt="Escudo Capitán América girando" />
       </center>
     )
     : (
       <div>
-        <h2 className="titulo">PERSONAJES</h2>
+        <h2 className="titulosPrincipales">PERSONAJES</h2>
         <br />
         <SearchBoxPersonajes search={search} />
         <div className="separacion" />

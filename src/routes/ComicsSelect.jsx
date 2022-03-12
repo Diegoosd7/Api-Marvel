@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "../App/components/Header/Header.jsx";
 import { useParams } from "react-router-dom";
 import "./ComicsSelect.css";
 import Precio from '../App/components/InfoComics/Precio'
@@ -42,7 +41,6 @@ export default function ComicSelect() {
 
   return (
     <div>
-      <Header />
       {
         items.map(comic =>
           <div className="infoComic">

@@ -22,7 +22,10 @@ render(
         <Route path="home" element={<Home />} />
         <Route path="comics" element={<Comics />} />
         <Route path="personajes" element={<Personajes />} />
-        {/* <Route
+        <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} />
+        <Route path="comicseleccionado/:idcomic" element={<ComicSelect />}>
+        </Route>
+        <Route
           path="*"
           element={(
             <main style={{ padding: '1rem' }}>
@@ -40,10 +43,8 @@ render(
               <br />
             </main>
           )}
-        /> */}
+        />
       </Route>
-      <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} /> 
-      <Route path="comicseleccionado/:idcomic" element={<ComicSelect />} />
     </Routes>
   </BrowserRouter>,
   rootElement,

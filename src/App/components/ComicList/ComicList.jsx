@@ -8,12 +8,12 @@ function ComicList({ items, isLoading, search }) {
     ?
     <center>
       <div className="separacion" />
-      <h1 className='titulo'>CARGANDO...</h1>
+      <h1 className='titulosPrincipales'>CARGANDO...</h1>
       <img src={escudo} alt="Escudo Capitán América girando" />
     </center>
     : (
       <div>
-        <h2 className="titulo">COMICS</h2>
+        <h2 className="titulosPrincipales">COMICS</h2>
         <br />
         <SearchBoxComics search={search}/>
         <div className="separacion" />
