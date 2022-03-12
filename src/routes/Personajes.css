@@ -2,34 +2,39 @@ body {
   margin: 1%;
 }
 
-.cartas {
+.contents {
   /*CONTENEDOR CON TODAS LOS PERSONAJES*/
   display: grid;
   grid-template-columns: repeat(4, 22%);
-  row-gap: 1%;
-  column-gap: 2%;
-  height: 3000px;
+  gap: 3%; /*SI SALEN 100, BAJARLO A 1 */
   justify-content: center;
 }
 
-/*EFECTO DE HOVER*/
-.cartas--hover {
-  position: relative;
-  width: 100%;
-}
-
-.cartas--hover__img {
-  display: block;
+.content img {
   width: 100%;
   height: 298px;
 }
 
-.cartas--hover__p {
+.content a{
+  text-decoration: none;
+}
+
+/*EFECTO DE HOVER*/
+.container {
+  position: relative;
+  width: 100%;
+}
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.overlay {
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
   color: #f1f1f1;
-  width: 100%;
+  width: 95%;
   padding: 8%;
   transition: 0.8s ease;
   opacity: 0;
@@ -37,8 +42,7 @@ body {
   font-size: 20px;
   text-align: center;
 }
-
-.cartas--hover:hover .cartas--hover__p {
+.container:hover .overlay {
   opacity: 1;
 }
 
@@ -48,4 +52,3 @@ body {
   font-size: 500%;
   font-family: 'Times New Roman', Times, serif;
 }
-
