@@ -12,6 +12,7 @@ import Home from './App/components/Home/Home';
 import PersonajeSelect from './routes/PersonajesSelect'
 import ComicSelect from './routes/ComicsSelect'
 import error from './App/img/404.png';
+import './App/App.css'
 
 const rootElement = document.getElementById('root');
 render(

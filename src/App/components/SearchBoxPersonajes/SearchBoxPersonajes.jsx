@@ -11,7 +11,7 @@ function SearchBoxPersonajes({ search }) {
   return (
       <center>
         <input id="search" type="search"
-          placeholder="Busca un personaje                                                                                                     🔍"
+          placeholder="Busca un personaje 🔍                                                                                                     🔍"
           autoFocus
           onChange={(e) => onSearch(e.target.value)}
           value={text} />
