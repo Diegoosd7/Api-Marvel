@@ -22,7 +22,7 @@ function Footer() {
         <a href="https://www.youtube.com/marvel" target="_blank" rel="noopener noreferrer">
           <img className="footer__image" src={youtube} alt="youtube" width="100px" />
         </a>
-        <div className="separacionFooter" />
+        <br/><br/>
         <p>©2022 MARVEL</p>
       </center>
     </footer>

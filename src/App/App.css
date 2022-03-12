@@ -25,7 +25,7 @@ body {
 }
 
 nav a {
-  /* ESTILOS PARA EL MENÚ */
+  /*ESTILOS PARA EL MENÚ */
   color: aliceblue;
   margin-left: 10%;
   font-size: xx-large;
@@ -33,9 +33,9 @@ nav a {
   font-family: 'Times New Roman', Times, serif;
 }
 
-a:hover,
-a:active {
-  color: red;
+.enlace:hover,
+.enlace:active {
+  color:red;
 }
 
 .titulo {
