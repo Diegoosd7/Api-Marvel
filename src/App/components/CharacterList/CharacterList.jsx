@@ -25,6 +25,10 @@ function CharacterList({ items, isLoading, search }) {
             ))
           }
         </section>
+        <div className="separacion" />
+        <div className="separacion" />
+        <div className="separacion" />
+        <div className="separacion" />
       </div>
     );
 }
