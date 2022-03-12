@@ -19,13 +19,15 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route index element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="comics" element={<Comics />} />
-        <Route path="personajes" element={<Personajes />} />
-        <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} />
-        <Route path="comicseleccionado/:idcomic" element={<ComicSelect />}>
+        <Route index element={<Home />} /> {/* Ruta que se ejecuta al iniciar la aplicación. Te carga el Home con la info de Marvel */}
+        <Route path="home" element={<Home />} /> {/* Ruta a la que te lleva el enlace de Inicio */}
+        <Route path="comics" element={<Comics />} /> {/* Ruta a la que te lleva el enlace de Comics. Carga la lista de Comics  */}
+        <Route path="personajes" element={<Personajes />} /> {/* Ruta a la que te lleva el enlace de Personajes. Carga la lista de Personajes */}
+        <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} /> {/* Ruta a la que te lleva al pinchar en un Personaje */}
+        <Route path="comicseleccionado/:idcomic" element={<ComicSelect />}> {/* Ruta a la que te lleva al pinchar en un Comic */}
         </Route>
+
+        {/* RUTA DE ERROR. SE EJECUTA CUANDO PONES UNA RUTA QUE NO EXISTE */}
         <Route
           path="*"
           element={(
