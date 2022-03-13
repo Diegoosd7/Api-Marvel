@@ -9,34 +9,22 @@ import App from './App';
 import Comics from './routes/Comics';
 import Personajes from './routes/Personajes';
 import Home from './App/components/Home/Home';
-import PersonajeSelect from './routes/PersonajesSelect';
-import ComicSelect from './routes/ComicsSelect';
+import PersonajeSelect from './routes/PersonajesSelect'
+import ComicSelect from './routes/ComicsSelect'
 import error from './App/img/404.png';
-import './App/App.css';
+import './App/App.css'
 
 const rootElement = document.getElementById('root');
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route index element={<Home />} />
-        {' '}
-        {/* Ruta que se ejecuta al iniciar la aplicación. Te carga el Home con la info de Marvel */}
-        <Route path="home" element={<Home />} />
-        {' '}
-        {/* Ruta a la que te lleva el enlace de Inicio */}
-        <Route path="comics" element={<Comics />} />
-        {' '}
-        {/* Ruta a la que te lleva el enlace de Comics. Carga la lista de Comics  */}
-        <Route path="personajes" element={<Personajes />} />
-        {' '}
-        {/* Ruta a la que te lleva el enlace de Personajes. Carga la lista de Personajes */}
-        <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} />
-        {' '}
-        {/* Ruta a la que te lleva al pinchar en un Personaje */}
-        <Route path="comicseleccionado/:idcomic" element={<ComicSelect />}>
-          {' '}
-          {/* Ruta a la que te lleva al pinchar en un Comic */}
+        <Route index element={<Home />} /> {/* Ruta que se ejecuta al iniciar la aplicación. Te carga el Home con la info de Marvel */}
+        <Route path="home" element={<Home />} /> {/* Ruta a la que te lleva el enlace de Inicio */}
+        <Route path="comics" element={<Comics />} /> {/* Ruta a la que te lleva el enlace de Comics. Carga la lista de Comics  */}
+        <Route path="personajes" element={<Personajes />} /> {/* Ruta a la que te lleva el enlace de Personajes. Carga la lista de Personajes */}
+        <Route path="personajeseleccionado/:idpersonaje" element={<PersonajeSelect />} /> {/* Ruta a la que te lleva al pinchar en un Personaje */}
+        <Route path="comicseleccionado/:idcomic" element={<ComicSelect />}> {/* Ruta a la que te lleva al pinchar en un Comic */}
         </Route>
 
         {/* RUTA DE ERROR. SE EJECUTA CUANDO PONES UNA RUTA QUE NO EXISTE */}
