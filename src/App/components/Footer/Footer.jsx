@@ -8,7 +8,7 @@ import youtube from '../../img/logos/youtube.png';
 
 function Footer() {
   return (
-    <footer className='pie'>
+    <footer className="pie">
       <center>
         <a href="https://www.facebook.com/marvel" target="_blank" rel="noopener noreferrer">
           <img className="footer__image" src={facebook} alt="facebook" width="100px" />
@@ -22,7 +22,8 @@ function Footer() {
         <a href="https://www.youtube.com/marvel" target="_blank" rel="noopener noreferrer">
           <img className="footer__image" src={youtube} alt="youtube" width="100px" />
         </a>
-        <br/><br/>
+        <br />
+        <br />
         <p>©2022 MARVEL</p>
       </center>
     </footer>

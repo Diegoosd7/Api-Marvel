@@ -6,7 +6,9 @@ import Footer from '../Footer/Footer';
 export default function Home() {
   return (
     <div>
-      <Content /> {/* MUESTRA LA PÁGINA DE INICIO */}
+      <Content />
+      {' '}
+      {/* MUESTRA LA PÁGINA DE INICIO */}
     </div>
   );
 }
