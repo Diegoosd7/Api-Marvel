@@ -8,7 +8,6 @@
   grid-template-columns: 40% 10% 40%;
   gap: 3%;
   justify-content: center;
-  text-align: justify;
 }
 
 .vs__img {
@@ -27,7 +26,6 @@
 .vs__p {
   color: white;
   font-size: medium;
-  text-align: justify;
 }
 
 .imagen {

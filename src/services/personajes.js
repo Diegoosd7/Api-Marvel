@@ -19,26 +19,26 @@ const hash = '79b39bc45ede5e3689d0b2c12862b630';
 const publicKey = '1928dbc9bba11631437d27c1258a8e7a';
 const URLPersonajes = `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${publicKey}&hash=${hash}&limit=36`;
 
-// FUNCIÓN QUE DEVUELVE 36 PERSONAJES
+//FUNCIÓN QUE DEVUELVE 36 PERSONAJES
 export async function accedePersonajes() {
-  const datos = await fetch(URLPersonajes);
-  const personajes = await datos.json();
+  let datos = await fetch(URLPersonajes);
+  let personajes = await datos.json();
 
   return personajes.data.results;
 }
 
-// FUNCIÓN QUE DEVUELVE 36 PERSONAJES O MENOS QUE EMPIECEN CON LO QUE LE PONGAS EN EL BUSCADOR
+//FUNCIÓN QUE DEVUELVE 36 PERSONAJES O MENOS QUE EMPIECEN CON LO QUE LE PONGAS EN EL BUSCADOR
 export async function buscarPersonajes(nombre) {
-  const data = await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}&limit=36`);
-  const personajes = await data.json();
+  let data = await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}&limit=36`)
+  let personajes = await data.json();
 
   return personajes.data.results;
 }
 
-// FUNCIÓN QUE BUSCA EL PERSONAJE QUE HAS PINCHADO SEGÚN EL ID QUE LE PASAS
-export async function infoPersonaje(id) {
-  const data = await fetch(`http://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${publicKey}&hash=${hash}`);
-  const personaje = await data.json();
+//FUNCIÓN QUE BUSCA EL PERSONAJE QUE HAS PINCHADO SEGÚN EL ID QUE LE PASAS
+export async function infoPersonaje(id){
+  let data = await fetch (`http://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${publicKey}&hash=${hash}`);
+  let personaje = await data.json();
 
   return personaje.data.results;
 }
