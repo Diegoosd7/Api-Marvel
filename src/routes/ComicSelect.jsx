@@ -1,59 +1,78 @@
 import React, { useEffect, useState } from "react";
-import Header from "../App/components/Header/Header.jsx";
 import { useParams } from "react-router-dom";
-import "./PersonajeSelect.css"; 
-
-var titulo;
-var description ;
-var img;
+import "./ComicsSelect.css";
+import Precio from '../App/components/InfoComics/Precio'
+import ListaPersonajes from '../App/components/InfoComics/ListaPersonajes'
+import Creadores from '../App/components/InfoComics/Creadores'
+import ListaHistorias from '../App/components/InfoComics/ListaHistorias'
+import URL from '../App/components/InfoComics/URL'
+import { infoComic } from '../services/comics';
 
 
 export default function ComicSelect() {
-  let params = useParams();
-  let idcomic = parseInt(params.idcomic, 10);
+  //ESTO ES PARA PASARLE COMO PARÁMETRO A LA RUTA EL ID DEL COMIC CUANDO PINCHES EN SU FOTO. 
+  let params = useParams(); // (UseParams es para rutas)
+  let idcomic = parseInt(params.idcomic, 10); //Le hacemos un parseINT para guardarlo como número
 
+  //CREAMOS UN HOOK PARA ALMACENAR EL COMIC EN UN ARRAY Y PASARSELO A OTROS COMPONENTES
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const hash = "79b39bc45ede5e3689d0b2c12862b630";
-    const publicKey = "1928dbc9bba11631437d27c1258a8e7a";
-    const urlAPI = `http://gateway.marvel.com/v1/public/comics/${idcomic}?ts=1&apikey=${publicKey}&hash=${hash}`;
-    console.log(urlAPI);
-    fetch(urlAPI)
-      .then((res) => res.json())
-      .then((comic) => {
-        console.log(comic.data.results);
-        setItems(comic.data.results);
-        console.log(items);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-  {
-    items.map((item) => {
-      //<div className="titulo">{item.description}</div>;
-      /*console.log(item.name);
-      console.log(item.description);
-      console.log(item.comics);
-      console.log(item.stories);
-      console.log(item.events);
-      console.log(item.series); */
-      titulo = item.title ;
-      img = `${item.thumbnail.path}.jpg`;
-      description = item.description ;
-    });
-  }
+    //Función que ejecuta la función de buscar un comic según el id que le pasamos
+    async function fetchInfoComic(idcomic) {
+      let comic = await infoComic(idcomic); //Le pasamos, a la función creada en services, el id del Comic que pinchamos
+      console.log(comic)
+      setItems(comic); // Le metemos al hook que hemos creado arriba, el comic que nos devuelve la funcion
+      setLoading(false); // La página de cargando seguirá hasta que se devuelva el comic y entonces, se ejecutará esta línea y se quitará el escudo
+    }
 
-  console.log(titulo);
+    //Llamamos a la funcion
+    fetchInfoComic(idcomic);
+
+  }, []);
+
   return (
     <div>
-      <Header />
-      <div className="cajaFoto">
-        <img src={img} className="fotoSelect" alt="" />
-      </div>
-      <div className="cajaTexto">
-        <h1 className="tituloP">{titulo}</h1>
-        <div>{description}</div>
-      </div>
+      {
+        //MAPEAMOS (RECORRER) EL ARRAY Y POR CADA COMIC LE SACAMOS LOS SIGUIENTES DATOS. (SOLO HAY UN COMIC EN EL ARRAY)
+        items.map(comic =>
+          <div className="infoComic">
+            <div className="informacion">
+              <img src={`${comic.thumbnail.path}.jpg`} className="informacion__img" alt="Portada Comic" /> {/* Foto del comic*/}
+              <div>
+                <h1 className="informacion__div__h1">{comic.title}</h1> {/* Precio del comic*/}
+                <p className="informacion__div__p">{comic.description}</p><br /> {/* Descripcion del comic*/}
+                <p className="informacion__div__p--titulo">SERIE: <span className="blanco">{comic.series.name}</span></p><br /> {/* Serie a la que pertenece el comic*/}
+                <p className="informacion__div__p--titulo">PÁGINAS: <span className="blanco">{comic.pageCount}</span></p><br /> {/* Páginas que tiene el comic*/}
+                <p className="informacion__div__p--titulo">PRECIO:</p><br />
+                <Precio precios={comic.prices} /> {/* Le pasamos un array con los precios del comic*/}
+              </div>
+            </div>
+
+            <div className="separacion"></div>
+
+            <div className="informacion2">
+              <div>
+                <p className="informacion__div__p--titulo">PERSONAJES QUE APARECEN</p>
+                <ListaPersonajes personajes={comic.characters.items} /> {/* Le pasamos un array con los personajes del comic*/}
+              </div>
+              <div>
+                <p className="informacion__div__p--titulo">CREADORES</p>
+                <Creadores creadores={comic.creators.items} /> {/* Le pasamos un array con los creadores del comic*/}
+              </div>
+              <div>
+                <p className="informacion__div__p--titulo">HISTORIAS RELACIONADAS</p>
+                <ListaHistorias historias={comic.stories.items} /> {/* Le pasamos un array con las historias relacionas con el comic*/}
+              </div>
+
+            </div>
+
+            <br />
+            <p className="informacion__div__p--titulo informacion__div__p--centrado">ENLACES DE INFORMACIÓN</p>
+            <URL enlaces={comic.urls} />  {/* Le pasamos un array con los enlace de información del comic*/}
+          </div>
+        )
+      }
     </div>
   );
 }

@@ -31,7 +31,8 @@ function CharacterList({ items, isLoading, search }) {
         <div className="separacion" />
         <div className="separacion" />
         <div className="separacion" />
-      </div>)
+      </div>
+    );
 }
 
 //LE METEMOS UNA "VALIDACIÓN" A LAS PROPS QUE NOS PASAN
