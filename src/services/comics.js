@@ -19,26 +19,26 @@ const hash = '79b39bc45ede5e3689d0b2c12862b630';
 const publicKey = '1928dbc9bba11631437d27c1258a8e7a';
 const URLComics = `http://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}`;
 
-// FUNCIÓN QUE DEVUELVE 20 COMICS
+//FUNCIÓN QUE DEVUELVE 20 COMICS
 export async function accedeComics() {
-  const datos = await fetch(URLComics);
-  const comics = await datos.json();
+  let datos = await fetch(URLComics);
+  let comics = await datos.json();
 
   return comics.data.results;
 }
 
-// FUNCIÓN QUE DEVUELVE 20 COMICS QUE EMPIECEN CON LO QUE LE PONGAS EN EL BUSCADOR
+//FUNCIÓN QUE DEVUELVE 20 COMICS QUE EMPIECEN CON LO QUE LE PONGAS EN EL BUSCADOR
 export async function buscarComics(nombre) {
-  const data = await fetch(`http://gateway.marvel.com/v1/public/comics?titleStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}`);
-  const comics = await data.json();
+  let data = await fetch(`http://gateway.marvel.com/v1/public/comics?titleStartsWith=${nombre}&ts=1&apikey=${publicKey}&hash=${hash}`)
+  let comics = await data.json();
 
   return comics.data.results;
 }
 
-// FUNCIÓN QUE BUSCA EL COMIC QUE HAS PINCHADO SEGÚN EL ID QUE LE PASAS
-export async function infoComic(id) {
-  const data = await fetch(`http://gateway.marvel.com/v1/public/comics/${id}?ts=1&apikey=${publicKey}&hash=${hash}`);
-  const comic = await data.json();
+//FUNCIÓN QUE BUSCA EL COMIC QUE HAS PINCHADO SEGÚN EL ID QUE LE PASAS
+export async function infoComic(id){
+  let data = await fetch (`http://gateway.marvel.com/v1/public/comics/${id}?ts=1&apikey=${publicKey}&hash=${hash}`);
+  let comic = await data.json();
 
   return comic.data.results;
 }
