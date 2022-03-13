@@ -5,15 +5,16 @@ import logo from '../../img/logos/Logo Marvel.png';
 function Header() {
   return (
     <header>
-      <NavLink to="/home"><a href=""><img className="logo" src={logo} alt="Logo Marvel" /></a></NavLink>
+      
+      <NavLink to="/home"><a href=""><img className="logo" src={logo} alt="Logo Marvel" /></a></NavLink> {/* ENLACE A HOME*/}
       <nav>
-        <Link to="/home">INICIO</Link>
+        <Link className="nav__a--color nav__a" to="/home">INICIO</Link> {/* ENLACE A HOME*/}
         <i className="bi bi-house" id="icono" />
         {' '}
-        <Link to="/personajes">PERSONAJES</Link>
+        <Link className="nav__a--color nav__a" to="/personajes">PERSONAJES</Link> {/* ENLACE A PERSONAJES*/}
         <i className="bi bi-person" id="icono2" />
         {' '}
-        <Link to="/comics">COMICS</Link>
+        <Link  className="nav__a--color nav__a" to="/comics">COMICS</Link> {/* ENLACE A COMICS*/}
         {/* <i className="glyphicon glyphicon-book" id="icono3" /> */}
         <i className="bi bi-book" id="icono3" />
       </nav>

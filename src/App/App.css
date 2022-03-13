@@ -5,27 +5,22 @@ body {
   background-image: url('./img/wallpaper.jpg');
 }
 
-.error {
-  display: grid;
-  grid-template-columns: 40% 40%;
-  gap: 10%;
-  align-items: center;
-  justify-content: center;
-}
-
-.error__p{
-  font-family: 'Times New Roman', Times, serif;
-  color:white;
-  font-size: 180%;
-  text-align: center;
-}
-
 .logo {
   width: 70%;
 }
 
-nav a {
-  /* ESTILOS PARA EL MENÚ */
+#icono,
+#icono2,
+#icono3,
+#icono4 {
+  margin-left: 15px;
+  font-size: 25px;
+  color: white;
+}
+
+/*ESTILOS PARA EL MENÚ */
+.nav__a{
+  
   color: aliceblue;
   margin-left: 10%;
   font-size: xx-large;
@@ -33,17 +28,9 @@ nav a {
   font-family: 'Times New Roman', Times, serif;
 }
 
-a:hover,
-a:active {
-  color: red;
-}
-
-.titulo {
-  /* CLASE PARA LOS TITULOS DE CADA SECCIÓN DEL MENÚ */
-  color: white;
-  text-align: center;
-  font-size: xx-large;
-  font-family: 'Times New Roman', Times, serif;
+.nav__a--color:hover,
+.nav__a--color:active {
+  color:red;
 }
 
 header {
@@ -62,15 +49,18 @@ header {
   padding: 2%;
 }
 
-footer {
-  color: white;
+/*PÁGINA DE ERROR*/
+.error {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 10%;
+  align-items: center;
+  justify-content: center;
 }
 
-#icono,
-#icono2,
-#icono3,
-#icono4 {
-  margin-left: 15px;
-  font-size: 25px;
-  color: white;
+.error__p{
+  font-family: 'Times New Roman', Times, serif;
+  color:white;
+  font-size: 180%;
+  text-align: center;
 }

@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div>
       <Header />
-      <Outlet />
+      <Outlet /> {/* CARGA LOS DATOS DE LOS COMPONENTES DE LAS RUTAS Y EL COMPONENTE HOME*/}
       <Footer />
     </div>
   );
